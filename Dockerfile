@@ -9,9 +9,10 @@ FROM node:12.16.1-alpine3.10 as react-build
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json /app/package.json
-RUN yarn
+# RUN yarn
 RUN yarn config set strict-ssl false
-yarn config set network-timeout 300000
+RUN yarn config set network-timeout 300000
+RUN yarn
 RUN yarn global add react-scripts@3.0.1
 COPY . /app
 RUN yarn build
