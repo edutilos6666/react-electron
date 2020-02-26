@@ -10,6 +10,7 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json /app/package.json
 RUN yarn
+RUN yarn config set strict-ssl false
 RUN yarn global add react-scripts@3.0.1
 COPY . /app
 RUN yarn build
