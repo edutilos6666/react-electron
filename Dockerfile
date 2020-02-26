@@ -5,7 +5,7 @@
 
 
 # stage: 1
-FROM node:12.2.0-alpine as react-build
+FROM node:12.16.1-alpine3.10 as react-build
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json /app/package.json
