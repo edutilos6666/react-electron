@@ -20,6 +20,7 @@ RUN yarn build
 
 # stage: 2 — the production environment
 FROM nginx:alpine
+COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
 COPY --from=react-build /app/build /usr/share/nginx/html
-EXPOSE 80
-CMD [“nginx”, “-g”, “daemon off;”]
+EXPOSE 3000 80
+ENTRYPOINT [“nginx”, “-g”, “daemon off;”]
