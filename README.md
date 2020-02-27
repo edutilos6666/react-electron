@@ -1,4 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## docker local
+### docker build -t react-electron .
+### docker run -d --name local-react-electron-container -p 80:80 react-electron
+
+### and go to browser: http://localhost
 
 ## Available Scripts
 
