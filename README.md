@@ -1,6 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 ## docker local
+
 ### docker build -t react-electron .
+
+### (with proxy settings): docker build --build-arg http_proxy=http://10.10.10.10:1234 --build-arg https_proxy=http://10.10.10.10:1234 -t react-electron .
+
 ### docker run -d --name local-react-electron-container -p 80:80 react-electron
 
 ### and go to browser: http://localhost
@@ -9,15 +14,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-## start electron 
+## start electron
+
 ### yarn build
+
 ### yarn electron
 
-## packaging 
+## packaging
+
 yarn add electron-packager --dev
-1. Linux 
-<pre>
-node_modules/electron-packager/bin/electron-packager.js . ReactElectron --overwrite --platform=linux --arch=x64 --prune=true --out=release-builds
+
+1. Linux
+   <pre>
+   node_modules/electron-packager/bin/electron-packager.js . ReactElectron --overwrite --platform=linux --arch=x64 --prune=true --out=release-builds
 
 </pre>
 2. Windows 
